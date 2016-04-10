@@ -1,0 +1,281 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{libertine}
+
+%% for nice typewriter font (with adjusted size)
+%\usepackage[scaled=.7]{beramono}
+
+
+%% Settings for using bibtex
+% \usepackage{url}
+% \usepackage[authordate, natbib, backend=biber, url=false]{biblatex-chicago}
+% \addbibresource{c:/Users/Benedikt/Desktop/research/lit.bib}
+
+\usepackage{relsize}
+\newcommand{\+}{\raisebox{1.5pt}{\smaller{+}}}
+
+
+%% packages and settings from fabproj (to get prior graph going)
+% to avoid $-issue when loading math from .csv
+\usepackage{array}
+\usepackage{amsmath}
+
+% Nicer margin notes (left and smaller font)
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]
+{\-\oldmarginpar[\raggedleft\sffamily\scriptsize #1]%
+{\raggedright\sffamily\scriptsize #1}}
+\reversemarginpar
+
+%% all the following for automated tables
+%csvsimple
+\usepackage{csvsimple}
+% pgfplotstable
+\usepackage{pgfplotstable}
+\pgfkeysifdefined{/pgfplots/table/output empty row/.@cmd}{
+    % upcoming releases offer this more convenient option:
+    \pgfplotstableset{
+        empty header/.style={
+          every head row/.style={output empty row},
+        }
+    }
+}
+
+% my original settings for using bibtex
+% professional tables
+\usepackage{booktabs}
+\let\hline\midrule
+
+%%  ----- other stuff ------
+\frenchspacing
+\pgfplotsset{compat=1.7}
+
+%% against scientific format in matlab2tikz figures
+\pgfplotsset{x tick label style={/pgf/number format/fixed}}
+\pgfplotsset{y tick label style={/pgf/number format/fixed}} 
+% suppresses 1000 separator
+\pgfplotsset{x tick label style={/pgf/number format/1000 sep=}}
+
+%  Nice hyperreferences (no neon boxes)
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={green!50!black}
+}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 3cm
+\rightmargin 2.5cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Optimal consumption choice under a CES consumption bundle
+\end_layout
+
+\begin_layout Author
+Benedikt Kolb
+\end_layout
+
+\begin_layout Standard
+Household consumption 
+\begin_inset Formula $C_{t}$
+\end_inset
+
+ is a composite index of domestic and imported consumption, 
+\begin_inset Formula $C_{h,t}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{f,t}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\begin{align}
+C_{t} & =\left[(1-\phi)^{\frac{1}{\zeta}}C_{h,t}^{\frac{\zeta-1}{\zeta}}+\phi^{\frac{1}{\zeta}}C_{f,t}^{\frac{\zeta-1}{\zeta}}\right]^{\frac{\zeta}{\zeta-1}},\label{eq:C}
+\end{align}
+
+\end_inset
+
+where 
+\begin_inset Formula $\phi$
+\end_inset
+
+ is the import share of domestic consumption and 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ the elasticity of substitution between domestic goods and imports.
+ Domestic and imported consumption 
+\begin_inset Formula $C_{h,t}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{f,t}$
+\end_inset
+
+ are sold at prices 
+\begin_inset Formula $P_{h,t}$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{f,t}$
+\end_inset
+
+, respectively, while the overall consumer price index is 
+\begin_inset Formula $P_{t}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+P_{t}C_{t} & =P_{h,t}C_{h,t}+P_{f,t}C_{f,t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To derive optimal levels of 
+\begin_inset Formula $C_{h,t}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{f,t}$
+\end_inset
+
+, households solve
+\begin_inset Formula 
+\begin{align*}
+\max_{C_{h,t},C_{f,t}} & P_{t}C_{t}-P_{h,t}C_{h,t}-P_{f,t}C_{f,t}\mbox{ s.t. }\eqref{eq:C}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives the two first-order conditions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+C_{h,t} & =(1-\phi)\left(\frac{P_{h,t}}{P_{t}}\right)^{-\zeta}C_{t}\\
+C_{f,t} & =\phi\left(\frac{P_{f,t}}{P_{t}}\right)^{-\zeta}C_{t}.
+\end{align*}
+
+\end_inset
+
+Moreover, substituting these conditions back into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:C"
+
+\end_inset
+
+, we obtain an expression for the consumer price 
+\begin_inset Formula $P_{t}$
+\end_inset
+
+ in terms of the price of domestic and foreign goods:
+\begin_inset Formula 
+\begin{align*}
+P_{t} & =\left[(1-\phi)P_{h,t}^{1-\zeta}+\phi P_{f,t}^{1-\zeta}\right]^{\frac{1}{1-\zeta}},\\
+\mbox{or }1 & =(1-\phi)\left(\frac{\bar{P}_{h,t}}{P_{t}}\right)^{1-\zeta}+\phi\left(\frac{\bar{P}_{f,t}}{P_{t}}\right)^{1-\zeta}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
