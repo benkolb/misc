@@ -217,9 +217,10 @@ C(w_{t},r_{t},Y_{t},A_{t}) & =\min_{L_{t}}w_{t}L_{t}+r_{k,t}\left(\frac{Y_{t}}{A
 
 The first-order condition of that problem is 
 \begin_inset Formula 
-\begin{align*}
-w_{t} & =\frac{1-\alpha}{\alpha}r_{k,t}\left(\frac{Y_{t}}{A_{t}L_{t}}\right)^{\frac{1}{\alpha}},
-\end{align*}
+\begin{align}
+w_{t} & =\frac{1-\alpha}{\alpha}r_{k,t}\left(\frac{Y_{t}}{A_{t}L_{t}}\right)^{\frac{1}{\alpha}}\nonumber \\
+ & =\frac{1-\alpha}{\alpha}r_{k,t}\left(\frac{K_{t}}{L_{t}}\right)^{\frac{1}{\alpha}},\label{eq:W_R}
+\end{align}
 
 \end_inset
 
@@ -268,7 +269,168 @@ C(w_{t},r_{t},Y_{t},A_{t}) & =\left[\left(\frac{1-\alpha}{\alpha}\frac{r_{t}}{w_
 \end_inset
 
 
-\begin_inset Newline newline
+\end_layout
+
+\begin_layout Standard
+The marginal cost is then just the first derivative of w.r.t.
+ output 
+\begin_inset Formula $Y_{t}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+MC_{t} & =\left(\frac{r_{t}}{\alpha}\right)^{\alpha}\left(\frac{w_{t}}{1-\alpha}\right)^{1-\alpha}\frac{1}{A_{t}}.\label{eq:MC}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that an equivalent way of expressing 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:W_R"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:MC"
+
+\end_inset
+
+ is to use the first-order conditions of a competitive wholesale producer
+ charging the price 
+\begin_inset Formula $P_{w,t}=MC_{t}$
+\end_inset
+
+, i.e.
+ who solves the problem
+\begin_inset Formula 
+\[
+\max_{L_{t},K_{t}}P_{w,t}A_{t}L_{t}^{1-\alpha}K_{t}^{\alpha}-w_{t}L_{t}-r_{t}K_{t},
+\]
+
+\end_inset
+
+The problem yields the conditions
+\begin_inset Formula 
+\begin{align}
+r_{t} & =P_{w,t}\alpha A_{t}\left(\frac{L_{t}}{K_{t}}\right)^{1-\alpha}\label{eq:R}\\
+w_{t} & =P_{w,t}(1-\alpha)A_{t}\left(\frac{K_{t}}{L_{t}}\right)^{1-\alpha}.\label{eq:W}
+\end{align}
+
+\end_inset
+
+To see that they are equivalent to the above derivations, divide 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:R"
+
+\end_inset
+
+ by 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:W"
+
+\end_inset
+
+ to obtain 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:W_R"
+
+\end_inset
+
+ and rearrange 
+\begin_inset Formula 
+\begin{align*}
+\left(\frac{r_{t}}{\alpha}\frac{1}{P_{w,t}A_{t}}\right)^{\frac{1}{1-\alpha}} & \overset{\eqref{eq:R}}{=}\frac{L_{t}}{K_{t}}\overset{\eqref{eq:W}}{=}\left(\frac{1-\alpha}{w_{t}}P_{w,t}A_{t}\right)^{\frac{1}{\alpha}},
+\end{align*}
+
+\end_inset
+
+which together with 
+\begin_inset Formula $P_{w,t}=MC_{t}$
+\end_inset
+
+ gives 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:MC"
+
+\end_inset
+
+.
+ It is only important to only use only two out of the equations, because
+ otherwise equations become collinear.
+ Examples for the use of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:W_R"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:MC"
+
+\end_inset
+
+ is 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "FVRubio-Ramirez06WP"
+
+\end_inset
+
+, while two for the use of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:R"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:W"
+
+\end_inset
+
+, with no derivation of 
+\begin_inset Formula $P_{w,t}$
+\end_inset
+
+, are 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "GertlerKaradi11"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "AbbrittiFahr13"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "C:/_Research/lit"
+options "../../../../Program Files (x86)/MiKTeX 2.9/bibtex/bst/chicago/chicago"
+
 \end_inset
 
 
