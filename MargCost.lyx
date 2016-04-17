@@ -429,7 +429,7 @@ key "AbbrittiFahr13"
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "C:/_Research/lit"
-options "../../../../Program Files (x86)/MiKTeX 2.9/bibtex/bst/chicago/chicago"
+options "C:/_Research/GK15/Lyx/chicago"
 
 \end_inset
 
